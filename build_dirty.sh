@@ -19,7 +19,7 @@ KERNEL_DIR=$PWD
 REPACK_DIR=$KERNEL_DIR/zip
 OUT=$KERNEL_DIR/out
 ZIP_NAME="$VERSION"-"$DATE"
-VERSION="whyred-2.9-FW-P"
+VERSION="tulip-1.0"
 DATE=$(date +%Y%m%d-%H%M)
 
 export KBUILD_BUILD_USER=builder
@@ -54,7 +54,7 @@ make_zip()
 		rm out/arch/arm64/boot/Image.gz-dtb
 }
 
-make whyred_defconfig O=out/
+make tulip_defconfig O=out/
 make -j$(nproc --all) O=out/
 make_zip
 
